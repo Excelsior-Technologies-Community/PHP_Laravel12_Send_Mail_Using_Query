@@ -71,9 +71,9 @@
         <h2>Send Email</h2>
 
         @if(session('success'))
-            <div class="success-msg">
-                {{ session('success') }}
-            </div>
+        <div class="success-msg">
+            {{ session('success') }}
+        </div>
         @endif
 
         <form action="{{ route('send.mail') }}" method="POST">
@@ -83,6 +83,13 @@
             <input type="text" name="subject" placeholder="Enter Subject" required>
             <textarea name="message" placeholder="Enter Message" rows="4" style="width:90%;padding:10px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;"></textarea>
             <button type="submit">Send Mail</button>
+
+            <p style="margin-top:15px;">
+                <a href="{{ route('mail.history') }}"
+                    style="display:inline-block; padding:8px 15px; border:1px solid #667eea; border-radius:6px; text-decoration:none; color:#667eea;">
+                    📄 View Email History
+                </a>
+            </p>
         </form>
     </div>
 
